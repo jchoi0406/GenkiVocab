@@ -7,14 +7,17 @@ app = Flask(__name__)
 cred = credentials.Certificate("../genkivocab-firebase-adminsdk-kgcp1-c12bf490e3.json")  # Replace with your service account key
 firebase_admin.initialize_app(cred)
 db = firestore.client()
-
+lesson_dict = {}
 @app.route("/learn/<int:lesson_number>")
 def learn(lesson_number):
     # Assuming the lesson_number corresponds to the lesson document ID in Firestore
-    collection_ref = db.collection("lessons").document(f"lesson_{lesson_number}").collection("words")
-    documents = list(collection_ref.stream())
-    # Sample 4 random documents from the collection
-    random_docs = random.sample(documents, 4)
+    if lesson_number not in lesson_dict:
+        collection_ref = db.collection("lessons").document(f"lesson_{lesson_number}").collection("words")
+        documents = list(collection_ref.stream())
+        lesson_dict[lesson_number] = documents
+        # Sample 4 random documents from the collection
+    
+    random_docs = random.sample(lesson_dict[lesson_number], 4)
     # Convert the documents to dictionaries
     random_words_data = [doc.to_dict() for doc in random_docs]
     # Return the JSON response
