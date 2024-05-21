@@ -24,4 +24,4 @@ def learn(lesson_number):
     return jsonify(random_words_data)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True) 
