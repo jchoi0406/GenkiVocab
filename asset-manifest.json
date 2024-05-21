@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/GenkiVocab/static/css/main.ad51d986.css",
+    "main.js": "/GenkiVocab/static/js/main.f4d3ea09.js",
+    "static/js/453.419a5d54.chunk.js": "/GenkiVocab/static/js/453.419a5d54.chunk.js",
+    "index.html": "/GenkiVocab/index.html",
+    "main.ad51d986.css.map": "/GenkiVocab/static/css/main.ad51d986.css.map",
+    "main.f4d3ea09.js.map": "/GenkiVocab/static/js/main.f4d3ea09.js.map",
+    "453.419a5d54.chunk.js.map": "/GenkiVocab/static/js/453.419a5d54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad51d986.css",
+    "static/js/main.f4d3ea09.js"
+  ]
+}
